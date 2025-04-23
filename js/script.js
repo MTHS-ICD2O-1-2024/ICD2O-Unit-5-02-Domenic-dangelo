@@ -6,26 +6,24 @@
 
 'use strict'
 
-const inputOption1 = Math.floor(Math.random() * 6) + 1
-const inputOption2 = Math.floor(Math.random() * -6) + 1
-
 /**
  * This function checks if the user has selected the random number from above.
  */
 // eslint-disable-next-line no-unused-vars
 function calculate() {
   // input
-  const userInput = parseInt(document.getElementById("kind-of-number").checked)
+  const isPositive = document.getElementById("option-positive").checked
+  const inputOption1 = Math.floor(Math.random() * 6) + 1
+  const inputOption2 = -1 * (Math.floor(Math.random() * 6) + 1)
 
   // process
-  if(userInput === 1) {
-    //output
-    document.getElementById('result').innerHTML =
-      '<p>The random number is:' + inputOption1 + '</p>'
+  if (isPositive === true) {
+    // output
+    document.getElementById("result").innerHTML =
+      "<p>The random positive number is: " + inputOption1 + "</p>"
   }
-  else (userInput === 2); {
-    //output
-    document.getElementById('result').innerHTML =
-      '<p>The random number is:' + inputOption2 + '</p>'
+  else {
+    document.getElementById("result").innerHTML =
+      "<p>The random negative number is: " + inputOption2 + "</p>"
   }
 }
